@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Media Downloader</title>
+</head>
+<body>
+    <h1>Media Downloader</h1>
+    <form method="POST" action="/download">
+        <label for="url">Media Link:</label><br>
+        <input type="text" id="url" name="url"><br><br>
+        <input type="submit" value="Download">
+    </form>
+    <div id="message">
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+        {% if files %}
+            <p>Downloaded files:</p>
+            <ul>
+                {% for file in files %}
+                    <li>{{ file }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>

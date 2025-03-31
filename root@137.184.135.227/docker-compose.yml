@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./downloads:/app/downloads
+    environment:
+      - DOWNLOAD_DIR=/app/downloads
+  # Optional: If you want a separate service for the download tools
+  # downloader:
+  #   image: <image_with_gallery_dl_and_yt_dlp>
+  #   volumes:
+  #     - ./downloads:/app/downloads
