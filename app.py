@@ -10,6 +10,7 @@ app = Flask(__name__)
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 DOWNLOAD_DIR = os.environ.get("DOWNLOAD_DIR", "/app/downloads")
+logging.info(f"Download directory: {DOWNLOAD_DIR}")
 if not os.path.exists(DOWNLOAD_DIR):
     try:
         os.makedirs(DOWNLOAD_DIR)
